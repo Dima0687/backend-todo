@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.3"
   },
   "repository": {
@@ -22,4 +23,9 @@
   },
   "homepage": "https://github.com/Dima0687/backend-todo#readme",
   "description": ""
+=======
+    "express": "^4.17.3",
+    "lowdb": "^3.0.0"
+  }
+>>>>>>> f916805fcff0cac884fff6f0d42a9460749db4b3
 }
