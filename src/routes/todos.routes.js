@@ -13,9 +13,9 @@ router.get('/todos', getAllTodos);
 
 router.post("/todos", createTodo);
 
-router.patch('./todos', updateTodo);
+router.patch('/todos/:id', updateTodo);
 
-router.del('/todos', deleteTodo);
+router.delete('/todos/:id', deleteTodo);
 
 // http://localhost:3000/api/v1/todos
 

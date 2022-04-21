@@ -14,10 +14,12 @@ function updateTodo(req, res) {
 
 }
 
-function deleteTodo(req, res) {
-
+async function deleteTodo(req,res) {
+  const deleteId = req.params.id;
+  const del = db.data.todos.filter(todo => todo.id !== deleteId)
+  db.data.todos = del;
+  await db.write(); 
 }
-
 
 export {
   getAllTodos,
