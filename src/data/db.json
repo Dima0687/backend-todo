@@ -5,6 +5,18 @@
       "name": "Zimmer aufräumen",
       "createdAt": "datum....",
       "id": "7893zhdfghahgw3b"
+    },
+    {
+      "completed": false,
+      "name": "Duschen",
+      "createdAt": "datum....",
+      "id": "0.128yhc288z0d"
+    },
+    {
+      "completed": false,
+      "name": "Müll rausbringen",
+      "createdAt": "datum....",
+      "id": "xiu2re"
     }
   ]
 }

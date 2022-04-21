@@ -1,21 +1,41 @@
+import { appendFile } from "fs";
 import db from "../data/init_lowdb.js"
+import express from 'express'
 
 db.read();
 
-function getAllTodos(req, res) {
+const  uid = (num) => {
+  const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result1= Math.random().toString(36).substring(num);       
 
+  return result1;
 }
+console.log(uid(7));
 
-function createTodo(req, res) {
 
+function getAllTodos(req, res) {
+    res.send(db.data.todos);
+  };
+
+async function createTodo(req, res) {
+    const newtodo = req.body;
+    newtodo.id = uid(7);
+    db.data.todos.push(newtodo);
+    await db.write();
+    res.send("POST request erhalten");
 }
 
 function updateTodo(req, res) {
 
 }
 
-function deleteTodo(req, res) {
-
+async function deleteTodo(req, res) {
+  const id = req.params.id;
+  const todos = db.data.todos;
+  const todosToKeep = todos.filter((todosObj) => todosObj.id !== id);
+  db.data.todos = todosToKeep;
+  await db.write();
+  res.send("todo deleted");
 }
 
 

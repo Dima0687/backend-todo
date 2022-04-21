@@ -1,14 +1,13 @@
 import express from 'express';
+import todosRouter from './routes/todos.routes.js'
 
 const app = express();
 
-app.use('/api/v1',);
+app.use(express.json());
 
-// http://localhost:3000/api/v1
+app.use('/api/v1', todosRouter);
 
-function getAllTodos(req,res) {
-    res.send();
-}
+// http://localhost:4000/api/v1
 
 
 app.listen(4000);
