@@ -1,9 +1,18 @@
-const logger = ( req, res, next) => {
-  console.log('ich bin der logger aus dem ordner controller')
-  next();
+function getAllTodos() {
+
 }
 
-export default logger
+function createTodo() {
+
+}
+
+function updateTodo() {
+
+}
+
+function deleteTodo() {
+  
+}
 
 /*
   Mehrere Seiten (endpunkte)
@@ -15,4 +24,15 @@ export default logger
   Express Router => routes + controller
   Logging von todo erstellt, todo (gelesen), todo gepatcht / put, todo gelöscht
   /contact  => // wenn zeit da ist ( front end )
+*/
+
+
+/* 
+ POST (CREATE) createTodo
+ GET => FELIX (READ) getAllTodos
+
+ PATCH / PUT updateTodo
+ 
+ DELETE deleteTodo
+
 */
