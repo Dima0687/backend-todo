@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { application } from 'express';
 import {
   getAllTodos,
   createTodo,
@@ -10,6 +10,12 @@ const router = express.Router();
 
 
 router.get('/todos', getAllTodos);
+
+router.post("/todos", createTodo);
+
+router.patch('./todos', updateTodo);
+
+router.del('/todos', deleteTodo);
 
 // http://localhost:3000/api/v1/todos
 
