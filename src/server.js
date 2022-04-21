@@ -1,9 +1,10 @@
-import express from 'express'
-import filmsRouter from './routes/films.routes.js';
+import express from 'express';
 
 const app = express();
 
-app.use('/films',filmsRouter);
+app.use('/api/v1',);
+
+// http://localhost:3000/api/v1
 
 
 app.listen(4000);

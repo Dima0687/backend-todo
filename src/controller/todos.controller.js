@@ -1,4 +1,4 @@
-function getAllTodos() {
+function getAllTodos(req, res) {
 
 }
 
@@ -11,9 +11,16 @@ function updateTodo() {
 }
 
 function deleteTodo() {
-  
+
 }
 
+
+export {
+  getAllTodos,
+  createTodo,
+  updateTodo,
+  deleteTodo
+}
 /*
   Mehrere Seiten (endpunkte)
 
