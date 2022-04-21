@@ -5,6 +5,12 @@
       "name": "Zimmer aufräumen",
       "createdAt": "datum....",
       "id": "7893zhdfghahgw3b"
+    },
+    {
+      "completed": false,
+      "name": "Zimmer schmutzig machen",
+      "createdAt": "datum....",
+      "id": "7893zhdfghahgw32"
     }
   ]
 }

@@ -9,7 +9,7 @@ import {
 const router = express.Router();
 
 
-router.get('/todos', getAllTodos);
+router.patch('/todos/:id', updateTodo);
 
 // http://localhost:3000/api/v1/todos
 

@@ -10,8 +10,21 @@ function createTodo(req, res) {
 
 }
 
-function updateTodo(req, res) {
+async function updateTodo(req, res) {
+  const { id } = req.params;
+  const database = db.data.todos;
+  const todo = database.find(todo => todo.id === id);
 
+  const newTodo = {
+    ...todo,
+    ...req.body
+  }
+  const filteredDatabase = database.filter(todo => todo.id !== id);
+  filteredDatabase.push(newTodo);
+
+  db.data.todos = filteredDatabase;
+  await db.write();
+  res.send(newTodo);
 }
 
 function deleteTodo(req, res) {
@@ -42,9 +55,9 @@ export {
  POST (CREATE) createTodo
  GET => FELIX (READ) getAllTodos
 
- PATCH / PUT updateTodo (UPDATE)
+ PATCH / PUT updateTodo (UPDATE) DIMA
  
- DELETE deleteTodo (DELETE) DIMA
+ DELETE deleteTodo (DELETE) ALECU
 
  routes ALECU
  error AISHA
