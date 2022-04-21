@@ -1,16 +1,20 @@
+import db from "../data/init_lowdb.js"
+
+db.read();
+
 function getAllTodos(req, res) {
 
 }
 
-function createTodo() {
+function createTodo(req, res) {
 
 }
 
-function updateTodo() {
+function updateTodo(req, res) {
 
 }
 
-function deleteTodo() {
+function deleteTodo(req, res) {
 
 }
 
