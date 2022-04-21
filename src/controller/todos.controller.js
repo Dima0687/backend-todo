@@ -38,8 +38,11 @@ export {
  POST (CREATE) createTodo
  GET => FELIX (READ) getAllTodos
 
- PATCH / PUT updateTodo
+ PATCH / PUT updateTodo (UPDATE)
  
- DELETE deleteTodo
+ DELETE deleteTodo (DELETE) DIMA
+
+ routes ALECU
+ error AISHA
 
 */
