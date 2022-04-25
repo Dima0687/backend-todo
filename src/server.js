@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-
+app.use
 app.use('/api/v1',);
 
 // http://localhost:3000/api/v1
