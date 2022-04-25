@@ -1,22 +1,18 @@
 {
   "todos": [
     {
-      "complited": false,
-      "name": "name",
-      "createdAt": "datum....",
-      "id": "7893zhdfghahgw3b"
+      "name": "Einkaufen",
+      "id": "5ecc44b9beb96d",
+      "completed": false,
+      "createdAt": "25.4.2022, 14:26:35",
+      "updatedAt": "25.4.2022, 14:26:35"
     },
     {
+      "name": "Aufräumen",
+      "id": "7e5e2818f270f6",
       "completed": false,
-      "name": "Duschen",
-      "createdAt": "datum....",
-      "id": "7893zhdfghahgw32"
-    },
-    {
-      "completed": false,
-      "name": "Müll rausbringen",
-      "createdAt": "datum....",
-      "id": "7893zhdfghahgwe9"
+      "createdAt": "25.4.2022, 14:27:12",
+      "updatedAt": "25.4.2022, 14:28:15"
     }
   ]
 }
