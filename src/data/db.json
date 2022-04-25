@@ -1,8 +1,8 @@
 {
   "todos": [
     {
-      "completed": false,
-      "name": "Zimmer aufräumen",
+      "complited": false,
+      "name": "name",
       "createdAt": "datum....",
       "id": "7893zhdfghahgw3b"
     },
