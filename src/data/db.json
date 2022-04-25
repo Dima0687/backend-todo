@@ -8,9 +8,15 @@
     },
     {
       "completed": false,
-      "name": "Zimmer schmutzig machen",
+      "name": "Duschen",
       "createdAt": "datum....",
       "id": "7893zhdfghahgw32"
+    },
+    {
+      "completed": false,
+      "name": "Müll rausbringen",
+      "createdAt": "datum....",
+      "id": "7893zhdfghahgwe9"
     }
   ]
 }

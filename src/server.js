@@ -7,7 +7,8 @@ app.use(express.json());
 
 app.use('/api/v1', todosRouter);
 
-// http://localhost:3000/api/v1
+// http://localhost:4000/api/v1
 
+const PORT = process.env.PORT || 4000;
 
-app.listen(4000);
+app.listen(PORT, console.log(`Der Server läuft auf Port: ${PORT}`));

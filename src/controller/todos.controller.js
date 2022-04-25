@@ -2,12 +2,29 @@ import db from "../data/init_lowdb.js"
 
 db.read();
 
-function getAllTodos(req, res) {
-
+const  uid = (num) => {
+  // const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = Math.random().toString(36).substring(/* 0, */num);  // Maximum sind aufgrund von *.random() 13 zeichen
+  return result;
 }
 
-function createTodo(req, res) {
+function getAllTodos(req, res) {
+    res.send(db.data.todos); 
+    // Ich weiß, uns wurde res.send gezeigt und ich weiß auch das es funktioniert, weil es unterstützt wird
+    // aber ich denke WIR sollten vielleicht das etwas aussagekräftigere res.json(...) nehmen, habe ich bisher auch noch nicht
+    // in diesem Projekt
 
+    // Auch hier // Todo: etwas ausgeben womit das Fron End weiter arbeiten könnte, siehe unten
+
+    // Außerdem sollten WIR überall try catch machen und dort dann den error handler aufrufen den Aisha uns schreibt
+  };
+
+async function createTodo(req, res) {
+    const newtodo = req.body;
+    newtodo.id = uid(7);
+    db.data.todos.push(newtodo);
+    await db.write();
+    res.send("POST request erhalten"); // TODO: Etwas ausgeben womit das Front End weiter arbeiten könnte, siehe unten
 }
 
 async function updateTodo(req, res) {
@@ -24,7 +41,7 @@ async function updateTodo(req, res) {
 
   db.data.todos = filteredDatabase;
   await db.write();
-  res.send(newTodo);
+  res.send(newTodo); // TODO: muss noch statusCode und msg an das Front End geschrieben werden
 }
 
 async function deleteTodo(req,res) {
@@ -32,6 +49,7 @@ async function deleteTodo(req,res) {
   const del = db.data.todos.filter(todo => todo.id !== deleteId)
   db.data.todos = del;
   await db.write(); 
+  res.send()// TODO: Benachrichtigungen an das Front End schicken z.B. { msg: 'hat alles geklappt etc.pp. } statusCode 200
 }
 
 export {

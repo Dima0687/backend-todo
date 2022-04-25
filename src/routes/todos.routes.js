@@ -1,4 +1,4 @@
-import express, { application } from 'express';
+import express from 'express';
 import {
   getAllTodos,
   createTodo,
@@ -9,14 +9,16 @@ import {
 const router = express.Router();
 
 
-router.patch('/todos/:id', updateTodo);
-
-router.post("/todos", createTodo);
-
-router.patch('/todos/:id', updateTodo);
+/* router.post('/todos', createTodo);
+router.get('/todos', getAllTodos);
 
 router.delete('/todos/:id', deleteTodo);
+router.patch('/todos/:id', updateTodo);
+ */
 
-// http://localhost:3000/api/v1/todos
+router.route('/todos').post(createTodo).get(getAllTodos);
+router.route('/todos/:id').patch(updateTodo).delete(deleteTodo);
+
+// http://localhost:4000/api/v1/todos
 
 export default router;
