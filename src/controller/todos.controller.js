@@ -10,7 +10,6 @@ const  uid = (num) => {
   let id = crypto.randomBytes(num).toString('hex'); // num * 2 ist die länge am ende
   return id
 }
-console.log(uid(8))
 
 function getAllTodos(req, res) {
     res.send(db.data.todos); 
