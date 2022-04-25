@@ -1,46 +1,69 @@
-import express from 'express';
-import fs from 'fs';
+app.use(errorLogger)
+app.use(errorResponder)
+app.use(failSafeHandler)
 
-import todosRouter from './routes/todos.routes.js';
+const errorLogger = (err, req, res, next) => {
+    console.error(err);
+    next(err) 
+  }
+  
+  const errorResponder = (err, req, res, next) => {
+    res.header("Content-Type", 'application/json')
+    res.status(err.statusCode).send(JSON.stringify(err, null, 4))
+  }
+  const invalidPathHandler = (req, res, next) => {
+    res.redirect('/error')
+  }
+  
+  module.exports = { errorLogger, errorResponder, invalidPathHandler }
 
 
-const router = express.Router();
 
-router.use(express.static("public"));
 
-router.get('/forbidden', (req, res, next) =>{
-    const myErr = new Error('my new error');
-    myErr.type = 'redirect';
-    console.log(myErr.type);
-    next(myErr);
-})
-router.get('/faulty', (req, res, next) =>{
-    const myErr = new Error('new error');
-    myErr.type = 'internal';
-    next(myErr);
-})
-router.get('/internalerror', (req, res, next) =>{
-    res.status(500);
-    res.send('Server Error')
-})
-router.get('/notfound', (req, res) => {
-    res.status(403);
-    res.send('Seite nicht gefunden');
-})
-router.use((err, req, res, next) => {
-    const entry = `${new Date().toISOString()}:${err.type}\n`;
-    fs.writeFileSync('err_log.txt', entry, {flag:'a',
-});
-next(err);
-})
 
-router.use((err, req, res, next) => {
-    if(err.type === 'redirect') {
-        res.redirect('/notfound');
-    } else {
-        res.redirect("/internalerror");
-    }
-    next(err);
-});
 
-export default router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const logger = require("../loggers/logger");
+const BaseError = require("./baseError");
+
+function logError(err) {
+  console.error(err);
+}
+
+function logErrorMiddleware(err, req, res, next) {
+  logError(err);
+  next(err);
+}
+
+function returnError(err, req, res, next) {
+  res.status(err.statusCode || 500).send(err.message);
+}
+
+function isOperationalError(error) {
+  if (error instanceof BaseError) {
+    return error.isOperational;
+  }
+  return false;
+}
+
+module.exports = {
+  logError,
+  logErrorMiddleware,
+  returnError,
+  isOperationalError,
+};
+ */
