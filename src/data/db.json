@@ -1,18 +1,18 @@
 {
   "todos": [
     {
-      "name": "Einkaufen",
-      "id": "5ecc44b9beb96d",
-      "completed": false,
-      "createdAt": "25.4.2022, 14:26:35",
-      "updatedAt": "25.4.2022, 14:26:35"
-    },
-    {
       "name": "Aufräumen",
       "id": "7e5e2818f270f6",
       "completed": false,
       "createdAt": "25.4.2022, 14:27:12",
       "updatedAt": "25.4.2022, 14:28:15"
+    },
+    {
+      "name": "Feierabend machen",
+      "id": "28ba74fe135575",
+      "completed": false,
+      "createdAt": "25.4.2022, 16:05:39",
+      "updatedAt": "25.4.2022, 16:05:39"
     }
   ]
 }

@@ -13,7 +13,7 @@ const  uid = (num) => {
 
 async function getAllTodos (req, res, next) {
   try {
-    const todos = db.data.todo;
+    const todos = db.data.todos;
   if(!todos) {
     return next(new Error())
   } 
