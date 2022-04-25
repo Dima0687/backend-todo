@@ -4,6 +4,7 @@ import todosRouter from './routes/todos.routes.js';
 const app = express();
 
 app.use(express.json());
+// den error handler hinzufügen
 
 app.use('/api/v1', todosRouter);
 

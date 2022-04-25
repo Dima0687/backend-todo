@@ -14,6 +14,7 @@ console.log(uid(8))
 
 function getAllTodos(req, res) {
     res.send(db.data.todos); 
+
     // Ich weiß, uns wurde res.send gezeigt und ich weiß auch das es funktioniert, weil es unterstützt wird
     // aber ich denke WIR sollten vielleicht das etwas aussagekräftigere res.json(...) nehmen, habe ich bisher auch noch nicht
     // in diesem Projekt
