@@ -1,0 +1,1 @@
+ERROR: "STATUSCODE: 500 MESSAGE: Ein Fehler ist aufgetreten. Versuchen Sie es nochmal" TIME: "25.4.2022, 15:45:05" 

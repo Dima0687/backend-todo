@@ -1,21 +1,41 @@
-app.use(errorLogger)
-app.use(errorResponder)
-app.use(failSafeHandler)
+import { OurErrors } from "./err1.js";
+import { appendFile, readFileSync } from "fs";
 
-const errorLogger = (err, req, res, next) => {
-    console.error(err);
-    next(err) 
-  }
-  
-  const errorResponder = (err, req, res, next) => {
-    res.header("Content-Type", 'application/json')
-    res.status(err.statusCode).send(JSON.stringify(err, null, 4))
-  }
-  const invalidPathHandler = (req, res, next) => {
-    res.redirect('/error')
-  }
-  
-  module.exports = { errorLogger, errorResponder, invalidPathHandler }
+import path, { dirname } from 'path';
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const pathToLog = path.join(__dirname, 'err_log.txt');
+
+
+const failureMsg = (failure) => {
+    
+    const date = new Date().toLocaleString("de-DE");
+    const failureMessage = `ERROR: "${failure}" TIME: "${date}" \n`;
+    appendFile(pathToLog, failureMessage, (error) =>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log('\nERROR LOG:', readFileSync("err_log.txt", "utf8"))
+        }
+    } )
+    return failureMessage
+}
+
+const error = async(err, req, res, next) => {
+    if(err instanceof OurErrors){
+        const failure = `STATUSCODE: ${err.statusCode} MESSAGE: ${err.message}`;
+        failureMsg(failure);
+        res.status(err.statusCode).json({msg: err.message});
+    }
+    const code = 500;
+    const msg = "Ein Fehler ist aufgetreten. Versuchen Sie es nochmal";
+    const failure = `STATUSCODE: ${code} MESSAGE: ${msg}`;
+    failureMsg(failure);
+    res.status(500).json({ msg }); 
+}
+ 
+  export default error;
 
 
 
