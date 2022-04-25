@@ -1,12 +1,16 @@
+import crypto from 'crypto';
 import db from "../data/init_lowdb.js"
 
 db.read();
 
 const  uid = (num) => {
   // const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = Math.random().toString(36).substring(/* 0, */num);  // Maximum sind aufgrund von *.random() 13 zeichen
-  return result;
+  //let result = Math.random().toString(36).substring(/* 0, */num);  // Maximum sind aufgrund von *.random() 13 zeichen
+  //return result;
+  let id = crypto.randomBytes(num).toString('hex'); // num * 2 ist die länge am ende
+  return id
 }
+console.log(uid(8))
 
 function getAllTodos(req, res) {
     res.send(db.data.todos); 
