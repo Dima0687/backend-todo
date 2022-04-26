@@ -1,13 +1,6 @@
 {
   "todos": [
     {
-      "name": "Feierabend machen",
-      "id": "28ba74fe135575",
-      "completed": false,
-      "createdAt": "25.4.2022, 16:05:39",
-      "updatedAt": "26.4.2022, 12:54:28"
-    },
-    {
       "name": "schlafen",
       "id": "585b65c3b0f6d6",
       "completed": false,
@@ -15,18 +8,18 @@
       "updatedAt": "26.4.2022, 15:02:43"
     },
     {
-      "name": "sofort feierabend machen!",
-      "id": "8e77ff9fe69deb",
+      "name": "Feierabend",
+      "id": "a299134a44aabf",
       "completed": true,
-      "createdAt": "26.4.2022, 13:10:30",
-      "updatedAt": "26.4.2022, 15:22:21"
+      "createdAt": "26.4.2022, 16:13:15",
+      "updatedAt": "26.4.2022, 16:40:38"
     },
     {
-      "name": "begrüßen!",
-      "id": "009ccf84b8f039",
+      "name": "Schlafen gehen",
+      "id": "8e77ff9fe69deb",
       "completed": false,
-      "createdAt": "26.4.2022, 15:22:35",
-      "updatedAt": "26.4.2022, 15:22:51"
+      "createdAt": "26.4.2022, 13:10:30",
+      "updatedAt": "26.4.2022, 16:40:13"
     }
   ]
 }

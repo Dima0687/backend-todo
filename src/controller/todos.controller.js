@@ -65,10 +65,9 @@ async function updateTodo(req, res, next) {
         ...req.body, 
         updatedAt: new Date().toLocaleString("de-DE")
       }
-      const filteredDatabase = database.filter(todo => todo.id !== id);
-      filteredDatabase.push(newTodo);
-    
-      db.data.todos = filteredDatabase;
+      const index = database.indexOf(todo);
+
+      database.splice(index, 1, newTodo);
       await db.write();
       res.status(200).json({msg: "updated", data:newTodo}); 
     }
