@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import todosRouter from './routes/todos.routes.js';
 import error from './error/error-handler.js';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 // den error handler hinzufügen
 

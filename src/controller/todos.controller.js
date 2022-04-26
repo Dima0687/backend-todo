@@ -24,7 +24,7 @@ async function getAllTodos (req, res, next) {
   };
 
 async function createTodo(req, res, next) {
-
+  console.log('post req')
   try{
       const newtodo = req.body;
       if(!newtodo.name) {
