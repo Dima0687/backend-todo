@@ -1,25 +1,18 @@
 {
   "todos": [
     {
-      "name": "schlafen",
-      "id": "585b65c3b0f6d6",
-      "completed": false,
-      "createdAt": "26.4.2022, 14:48:52",
-      "updatedAt": "26.4.2022, 15:02:43"
-    },
-    {
-      "name": "Feierabend",
+      "name": "Feierabend!",
       "id": "a299134a44aabf",
-      "completed": true,
+      "completed": false,
       "createdAt": "26.4.2022, 16:13:15",
-      "updatedAt": "26.4.2022, 16:40:38"
+      "updatedAt": "26.4.2022, 18:21:32"
     },
     {
-      "name": "Schlafen gehen",
+      "name": "Schlafen",
       "id": "8e77ff9fe69deb",
       "completed": false,
       "createdAt": "26.4.2022, 13:10:30",
-      "updatedAt": "26.4.2022, 16:40:13"
+      "updatedAt": "26.4.2022, 18:24:03"
     }
   ]
 }
