@@ -3,6 +3,13 @@ import cors from 'cors';
 import todosRouter from './routes/todos.routes.js';
 import error from './error/error-handler.js';
 
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const pathToPublicFolder = path.join(__dirname, "..", "public");
+
+
 const app = express();
 
 app.use(cors());
